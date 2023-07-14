@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="navbar">
+    <nav>
+      <h1> <span> Welcome: </span> {{myuser | titlecase}}</h1>
+      <div class="button">
+        <div class="addproductbtn">
+          <button (click)="addproduct()"> <a> Add Product </a></button>
+        </div>
+        <div class="logoutbtn">
+          <button (click)="logout()"> <a> Logout </a></button>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="products">
+    <div *ngFor="let productdata of product">
+      <div class="product">
+        <h1>{{ productdata.name | uppercase}}</h1>
+        <img type="png,jpeg" width="300px" height="200px" [src]="imageUrl + productdata.image" alt="Product Image">
+        <div class="material">
+          <p>Price: <span>{{ productdata.price }}</span> </p>
+          <p>Category: <span>{{ productdata.category | titlecase}}</span></p>
+        </div>
+        <div>
+          <button class="dltbtn" (click)="delete(productdata.name)"> Delete</button>
+          <button class="updbtn" (click)="update(productdata.name)"> Update </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

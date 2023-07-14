@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="form">
+        <h1 style="color: white;">Add Product</h1>
+        <form [formGroup]="addproductform" (ngSubmit)="addproduct()">
+            <label for="name">Prod. Name: </label>
+            <input type="text" formControlName="name">
+            <br><br>
+            <label for="price">Prod. Price: </label>
+            <input type="text" formControlName="price">
+            <br><br>
+            <label for="category">Category  : </label>
+            <input type="text" formControlName="category">
+            <br><br>
+            <label for="image">Image: </label>
+            <input type="file" formControlName="image" (change)="onFileSelected($event)">
+            <br><br>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>

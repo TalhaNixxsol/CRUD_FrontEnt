@@ -1,0 +1,49 @@
+
+<div class="container">
+    <div class="form">
+      <form action="" [formGroup]="signupform" (ngSubmit)="signup(signupform.value)">
+        <h1>Signup Form</h1>
+        <label for="firstname">First Name: </label>
+        <input type="text" formControlName="firstname" placeholder="First Name"> <br><br>
+        <div *ngIf="signupform.controls['firstname'].touched && signupform.controls['firstname'].errors?.['required']">
+          First Name is required
+        </div>
+        <div *ngIf="signupform.controls['firstname'].touched && signupform.controls['firstname'].errors?.['pattern']">
+          Invalid Pattern
+        </div>
+        <label for="lastname">Last Name: </label>
+        <input type="text" formControlName="lastname" placeholder="Last Name"><br><br>
+        <div *ngIf="signupform.controls['lastname'].touched && signupform.controls['lastname'].errors?.['required']">
+          Last Name is required
+        </div>
+        <div *ngIf="signupform.controls['lastname'].touched && signupform.controls['lastname'].errors?.['pattern']">
+          Invalid Pattern
+        </div>
+        <label for="username">UserName: </label>
+        <input type="text" formControlName="username" placeholder="username"><br><br>
+        <div *ngIf="signupform.controls['username'].touched && signupform.controls['username'].errors?.['required']">
+          username is required
+        </div>
+        <label for="email">User Email: </label>
+
+        <input type="text" formControlName="email" placeholder="Email"> <br><br>
+        <div *ngIf="signupform.controls['email'].touched && signupform.controls['email'].errors?.['required']">
+          Email is required
+        </div>
+
+
+
+        <label for="password">Password: </label>
+
+
+        <input type="password" formControlName="password" placeholder="password"> <br><br>
+        <div *ngIf="signupform.controls['password']?.touched && signupform.controls['password'].invalid">
+          Minimum length is 8 <br>
+          Contains atleast 1 Special Character <br>
+          Contains atleast 1 uppercase and 1 lowercase <br>
+        </div>
+        <button type="submit" [disabled]="signupform.invalid">Submit</button><br><br>
+        <a routerLink="/login">Click! if you already signup</a>
+      </form>
+    </div>
+  </div>

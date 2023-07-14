@@ -1,0 +1,24 @@
+
+
+// Define your custom theme here if needed
+
+// Customize the styles for the Dialog Component
+.mat-dialog-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+mat-dialog-actions {
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+button[type="submit"] {
+  margin-right: 16px;
+}
